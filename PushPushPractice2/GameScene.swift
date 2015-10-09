@@ -16,14 +16,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var bg = SKSpriteNode()
     
+    var bg2 = SKSpriteNode()
+    
     var figure = SKSpriteNode()
     
+    var gameOverLabel = SKLabelNode()
+    
+    var worldNode = SKNode()
+    
+    var cameraNode = SKNode()
+    
+    var labelContainer = SKSpriteNode()
+    
+    enum ColliderType: UInt32 {
+        
+        case figure = 1
+        case ground = 2
+    }
+    
+   var gameOver = false
     
     override func didMoveToView(view: SKView) {
         
         // F I G U R E   S T A T I O N A R Y
         
-        
+        self.anchorPoint = CGPointMake(0.5, 0.5)
         // assigning the image to the object we created (figure)
         
         
@@ -33,43 +50,66 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         figure = SKSpriteNode(texture: figureTexture3)
         
         figure.position = CGPoint(x: CGRectGetMidX(self.frame), y: 222)
-
+        
         
         figure.zPosition = 5;
         
-        
-        self.addChild(figure)
+
+        self.addChild(worldNode)
         
         
         
         // B A C K    G R O U N D
         
         let bgTexture = SKTexture(imageNamed: "bgCn3.png")
+      
         
         bg = SKSpriteNode(texture: bgTexture)
         
-      //  bg.position = CGPointMake(self.size.width/2, self.size.height/2)
+        
+        //  bg.position = CGPointMake(self.size.width/2, self.size.height/2)
         
         bg.position = CGPoint(x: CGRectGetMidX(self.frame), y: 10)
         
-     //   bg.size.height = self.frame.height
         
         bg.zPosition = 0;
         
-        self.addChild(bg)
+        // we added the figure and background as part of a child of the Wolrd node(which is the parent node of this scene)
+        self.worldNode.addChild(figure)
+        self.worldNode.addChild(bg)
         
         
+        // G R O U N D
+        
+        var ground = SKNode()
+        ground.position = CGPointMake(0, -390)
+        ground.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width, 1))
+        ground.physicsBody!.dynamic = false
+        
+        ground.physicsBody!.categoryBitMask = ColliderType.figure.rawValue
+        ground.physicsBody!.contactTestBitMask = ColliderType.figure.rawValue
+        ground.physicsBody!.collisionBitMask = ColliderType.figure.rawValue
+        
+        self.addChild(ground)
+        
+    
+    }
+    
+    
+    // function defining what CG Node we want the world to be centered on (in this case the figure)
+    
+    func centerOnView(center:CGPoint) {
         
         
-     
+        self.worldNode.position = CGPoint(x: 0 , y: -center.y)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+        /* Called when a touch begins */
         
         // F I G U R E     P U S H E D
-
-       figure.hidden = true
+        
+        figure.hidden = true
         
         let figureTexture = SKTexture(imageNamed: "f1.png")
         let figureTexture2 = SKTexture(imageNamed: "f2.png")
@@ -104,9 +144,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             figure.runAction(SKAction.repeatActionForever(action))
             
-          //  self.addChild(figure)
+            //  self.addChild(figure)
         }
-
         
         
         // this adds the figure to the scene(screen)
@@ -114,32 +153,69 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        let physicsGround = SKPhysicsBody(edgeFromPoint: CGPoint(x: CGRectGetMinX(self.frame), y: CGRectGetMinY(self.frame)+65), toPoint: CGPoint(x: CGRectGetMaxX(self.frame), y: CGRectGetMinY(self.frame)+65))
+//        let physicsGround = SKPhysicsBody(edgeFromPoint: CGPoint(x: CGRectGetMinX(self.frame), y: CGRectGetMinY(self.frame)+65), toPoint: CGPoint(x: CGRectGetMaxX(self.frame), y: CGRectGetMinY(self.frame)+65))
+//        
+//        self.physicsBody = physicsBody
         
-        self.physicsBody = physicsBody
+   
         
-      
+        
+        
+            }
+    
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        
+        
+        gameOver == true
+        
+        self.speed = 0
+        
+        gameOverLabel.fontName = "Helvetica"
+        gameOverLabel.fontSize = 22
+        gameOverLabel.text = "lol u a faggot Reiss, tap and try again : *"
+        gameOverLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        gameOverLabel.zPosition = 2;
+        labelContainer.addChild(gameOverLabel)
+        
+        //         figure.removeFromParent()
+        //
+        //            let figureTexture4 = SKTexture(imageNamed: "dead.png")
+        //
+        //            figure = SKSpriteNode(texture: figureTexture4)
+        //
+        //            figure.position = CGPoint(x: CGRectGetMidX(self.frame), y: -280)
+        //
+        //
+        //            figure.zPosition = 5;
+        //
+        //
+        //            self.addChild(figure)
+        
+    }
+    
+    override func didFinishUpdate() {
+        
+        // calling the centerOnView function to pass on the figure to it
+        
+        self.centerOnView(figure.position)
+
+    }
+    override func didSimulatePhysics() {
+        
+    }
+
+    
+    override func update(currentTime: CFTimeInterval) {
+        
+        
+        // checking where the figure position
+        print(figure.position.y)
+        if figure.position.y <= -2000 {
+            print("game over")
+        }
         
        
     }
-    override func didSimulatePhysics() {
-        //
-        centerOnNode(figure)
-
-    }
-    func centerOnNode(node: SKNode) {
-        var cameraPosition: CGPoint = (node.scene?.convertPoint(node.position, fromNode: node.parent!))!
-        cameraPosition.x = 700
-        
-        let posX = node.parent?.position.x
-        let posY = node.parent?.position.y
-        
-        node.parent?.position = CGPointMake(posX! - cameraPosition.x, posY! - cameraPosition.y)
-        print("Following Player")
-    }
-   
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
-        
-        }
-    }
+}

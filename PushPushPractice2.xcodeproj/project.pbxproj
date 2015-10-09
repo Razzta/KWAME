@@ -21,6 +21,12 @@
 		755049BD1BC344FB00D17C68 /* f2.png in Resources */ = {isa = PBXBuildFile; fileRef = 755049B91BC344FB00D17C68 /* f2.png */; settings = {ASSET_TAGS = (); }; };
 		755049BE1BC344FB00D17C68 /* f3.png in Resources */ = {isa = PBXBuildFile; fileRef = 755049BA1BC344FB00D17C68 /* f3.png */; settings = {ASSET_TAGS = (); }; };
 		755049C01BC3519100D17C68 /* bgCn3.png in Resources */ = {isa = PBXBuildFile; fileRef = 755049BF1BC3519100D17C68 /* bgCn3.png */; settings = {ASSET_TAGS = (); }; };
+		75A1B3071BC5D04C00C80B83 /* 0_Intoducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1B3061BC5D04C00C80B83 /* 0_Intoducer.swift */; settings = {ASSET_TAGS = (); }; };
+		75A1B3091BC5D09800C80B83 /* 1_MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1B3081BC5D09800C80B83 /* 1_MainMenu.swift */; settings = {ASSET_TAGS = (); }; };
+		75A1B30C1BC5E1F800C80B83 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A1B30B1BC5E1F800C80B83 /* BG.png */; settings = {ASSET_TAGS = (); }; };
+		75A1B3551BC6263A00C80B83 /* SampleAssets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 75A1B3541BC6263A00C80B83 /* SampleAssets.atlas */; settings = {ASSET_TAGS = (); }; };
+		75A1B3711BC8240000C80B83 /* Untitled.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A1B3701BC8240000C80B83 /* Untitled.png */; settings = {ASSET_TAGS = (); }; };
+		75A1B3731BC82E8500C80B83 /* dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A1B3721BC82E8500C80B83 /* dead.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,13 @@
 		755049B91BC344FB00D17C68 /* f2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f2.png; sourceTree = "<group>"; };
 		755049BA1BC344FB00D17C68 /* f3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f3.png; sourceTree = "<group>"; };
 		755049BF1BC3519100D17C68 /* bgCn3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgCn3.png; sourceTree = "<group>"; };
+		75A1B3061BC5D04C00C80B83 /* 0_Intoducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 0_Intoducer.swift; sourceTree = "<group>"; };
+		75A1B3081BC5D09800C80B83 /* 1_MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 1_MainMenu.swift; sourceTree = "<group>"; };
+		75A1B30B1BC5E1F800C80B83 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
+		75A1B30E1BC5E2C300C80B83 /* PushPushPractice2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PushPushPractice2.xcodeproj; path = "/Users/Raza/Documents/Game final/practice/PushPushPractice2/PushPushPractice2.xcodeproj"; sourceTree = "<absolute>"; };
+		75A1B3541BC6263A00C80B83 /* SampleAssets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SampleAssets.atlas; sourceTree = "<group>"; };
+		75A1B3701BC8240000C80B83 /* Untitled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Untitled.png; sourceTree = "<group>"; };
+		75A1B3721BC82E8500C80B83 /* dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dead.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +104,8 @@
 		755049791BC3445D00D17C68 = {
 			isa = PBXGroup;
 			children = (
+				75A1B35B1BC7059100C80B83 /* New Group1 */,
+				75A1B30F1BC5E2C300C80B83 /* New Group */,
 				755049841BC3445D00D17C68 /* PushPushPractice2 */,
 				7550499D1BC3445D00D17C68 /* PushPushPractice2Tests */,
 				755049A81BC3445D00D17C68 /* PushPushPractice2UITests */,
@@ -98,8 +113,13 @@
 				755049B81BC344FB00D17C68 /* f1.png */,
 				755049B91BC344FB00D17C68 /* f2.png */,
 				755049BA1BC344FB00D17C68 /* f3.png */,
+				75A1B3721BC82E8500C80B83 /* dead.png */,
 				755049B71BC344FB00D17C68 /* bgCn2.png */,
+				75A1B3701BC8240000C80B83 /* Untitled.png */,
 				755049BF1BC3519100D17C68 /* bgCn3.png */,
+				75A1B30B1BC5E1F800C80B83 /* BG.png */,
+				75A1B3541BC6263A00C80B83 /* SampleAssets.atlas */,
+				75A1B3031BC5CF2100C80B83 /* Scene */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,7 +138,6 @@
 			children = (
 				755049851BC3445D00D17C68 /* AppDelegate.swift */,
 				755049871BC3445D00D17C68 /* GameScene.sks */,
-				755049891BC3445D00D17C68 /* GameScene.swift */,
 				7550498B1BC3445D00D17C68 /* GameViewController.swift */,
 				7550498D1BC3445D00D17C68 /* Main.storyboard */,
 				755049901BC3445D00D17C68 /* Assets.xcassets */,
@@ -144,6 +163,38 @@
 				755049AB1BC3445D00D17C68 /* Info.plist */,
 			);
 			path = PushPushPractice2UITests;
+			sourceTree = "<group>";
+		};
+		75A1B3031BC5CF2100C80B83 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				755049891BC3445D00D17C68 /* GameScene.swift */,
+				75A1B3061BC5D04C00C80B83 /* 0_Intoducer.swift */,
+				75A1B3081BC5D09800C80B83 /* 1_MainMenu.swift */,
+			);
+			name = Scene;
+			path = PushPushPractice2;
+			sourceTree = "<group>";
+		};
+		75A1B30F1BC5E2C300C80B83 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				75A1B30E1BC5E2C300C80B83 /* PushPushPractice2.xcodeproj */,
+			);
+			name = "New Group";
+			path = PushPushPractice2.xcodeproj;
+			sourceTree = "<group>";
+		};
+		75A1B3101BC5E30D00C80B83 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75A1B35B1BC7059100C80B83 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +286,12 @@
 			mainGroup = 755049791BC3445D00D17C68;
 			productRefGroup = 755049831BC3445D00D17C68 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 75A1B3101BC5E30D00C80B83 /* Products */;
+					ProjectRef = 75A1B30E1BC5E2C300C80B83 /* PushPushPractice2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				755049811BC3445D00D17C68 /* PushPushPractice2 */,
@@ -249,13 +306,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A1B30C1BC5E1F800C80B83 /* BG.png in Resources */,
 				755049C01BC3519100D17C68 /* bgCn3.png in Resources */,
+				75A1B3731BC82E8500C80B83 /* dead.png in Resources */,
 				755049BC1BC344FB00D17C68 /* f1.png in Resources */,
 				755049881BC3445D00D17C68 /* GameScene.sks in Resources */,
 				755049BE1BC344FB00D17C68 /* f3.png in Resources */,
 				755049941BC3445D00D17C68 /* LaunchScreen.storyboard in Resources */,
 				755049911BC3445D00D17C68 /* Assets.xcassets in Resources */,
 				7550498F1BC3445D00D17C68 /* Main.storyboard in Resources */,
+				75A1B3711BC8240000C80B83 /* Untitled.png in Resources */,
+				75A1B3551BC6263A00C80B83 /* SampleAssets.atlas in Resources */,
 				755049BD1BC344FB00D17C68 /* f2.png in Resources */,
 				755049BB1BC344FB00D17C68 /* bgCn2.png in Resources */,
 			);
@@ -282,6 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A1B3071BC5D04C00C80B83 /* 0_Intoducer.swift in Sources */,
+				75A1B3091BC5D09800C80B83 /* 1_MainMenu.swift in Sources */,
 				7550498A1BC3445D00D17C68 /* GameScene.swift in Sources */,
 				7550498C1BC3445D00D17C68 /* GameViewController.swift in Sources */,
 				755049861BC3445D00D17C68 /* AppDelegate.swift in Sources */,
@@ -511,6 +574,7 @@
 				755049B01BC3445D00D17C68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		755049B11BC3445D00D17C68 /* Build configuration list for PBXNativeTarget "PushPushPractice2Tests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +583,7 @@
 				755049B31BC3445D00D17C68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		755049B41BC3445D00D17C68 /* Build configuration list for PBXNativeTarget "PushPushPractice2UITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +592,7 @@
 				755049B61BC3445D00D17C68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
